@@ -15,7 +15,7 @@ Ext.define('App.view.ReadersGrid', {
             listeners: {
                 beforechange: function () {
                     searchPersonsForm = this.up().up(),
-                    keyWord = searchPersonsForm.down('textfield[name=Name]').getValue(),
+                    keyWord = searchPersonsForm.down('textfield[name=keyWord]').getValue(),
                     attribute = searchPersonsForm.down('radiogroup[name=atribute]').getChecked()[0].inputValue;
                     debtorFlag = searchPersonsForm.down('checkboxfield[name=deptor]').getValue();
                     gridReadersStore = this.store,

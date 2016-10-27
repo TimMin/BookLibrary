@@ -12,7 +12,20 @@ Ext.define('App.view.BookGrid', {
             displayMsg: '',
             emptyMsg: '',
             dock: 'bottom',
-
+            listeners: {
+                beforechange: function () {
+                    searchBooksForm = this.up().up(),
+                     keyWord = searchBooksForm.down('textfield[name=Name]').getValue();
+                    attribute = searchBooksForm.down('radiogroup[name=atribute]').getChecked()[0].inputValue;
+                    thereIs = searchBooksForm.down('checkboxfield[name=thereIs]').getValue();
+                    gridBooksStore = this.store,
+                    Ext.apply(gridBooksStore.getProxy().extraParams, {
+                        keyWord: keyWord,
+                        attribute: attribute,
+                        thereIs: thereIs,
+                    });
+                }
+            }
         },
         {
             xtype: 'panel',

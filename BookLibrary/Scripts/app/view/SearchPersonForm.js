@@ -19,7 +19,7 @@
                     inputType: 'Name',
                     xtype: 'textfield',
                     fieldLabel: 'Поиск',
-                    name: 'Name'
+                    name: 'keyWord'
                 },
             {
                 xtype: 'radiogroup',
@@ -48,7 +48,7 @@
                   
                    gridReadersStore = gridReaders.store;
                         searchPersonsForm=me;
-                        keyWord = searchPersonsForm.down('textfield[name=Name]').getValue();
+                        keyWord = searchPersonsForm.down('textfield[name=keyWord]').getValue();
                         attribute = searchPersonsForm.down('radiogroup[name=atribute]').getChecked()[0].inputValue;
                         debtorFlag = searchPersonsForm.down('checkboxfield[name=deptor]').getValue();
                         gridReadersStore.load(
